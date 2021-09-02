@@ -1,27 +1,27 @@
-// all required element
-const searchInput = document.getElementById("search_input");
+// ==================all required element====================
+const searchInput = document.getElementById("search_input_box");
 const resultsDiv = document.getElementById("results");
-const resultsCount = document.getElementById("results_count");
+const resultsCount = document.getElementById("results_counts");
 const topResults = document.getElementById("top_results");
 const loader = document.getElementById("loader");
 
-//showing result 
+//============================showing result  =============================
 const showResultCount = (number, searchText) => {
     resultsCount.innerText = `About ${number} results found for keyword " ${searchText} "`;
 };
 
-// Call the loadResult
-document.getElementById("search_input").addEventListener("keyup", (event) => {
+//========================== Call the loadResult ==========================
+document.getElementById("search_input_box").addEventListener("keyup", (event) => {
     if (event.key === "Enter") {
         loadResults();
     }
 });
 
-// load results
+// ========================load results ==========================
 const loadResults = async () => {
     const searchText = searchInput.value;
 
-    // empty value set
+    // ============================empty value set ======================
     resultsDiv.textContent = "";
     resultsCount.textContent = "";
     searchInput.value = "";
@@ -29,7 +29,7 @@ const loadResults = async () => {
     topResults.style.display = "none";
     loader.style.display = "block";
 
-    // alert show when searchText is empty
+    // ===========================alert show when searchText is empty==================
     if (searchText == "") {
         loader.style.display = "none";
         alert("You have to write something to search!");
@@ -47,7 +47,10 @@ const loadResults = async () => {
     }
 };
 
-//Display results
+// ==============================Display results =======================
+
+
+
 const showResults = (data) => {
     if (data?.length == 0) {
         alert("No search Result !!");
@@ -89,7 +92,7 @@ const showResults = (data) => {
         `;
         resultsDiv.appendChild(div);
     });
-    //hide loader
+    //==============================hide loader=====================
     loader.style.display = "none";
     topResults.style.display = "block";
 };
