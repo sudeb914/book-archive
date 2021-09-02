@@ -19,29 +19,25 @@
 
         }
 
-        body {
-            background-color: whitesmoke;
-
-        }
     </style>
 
 </head>
 
-<body>
+<body class="bg-dark">
     <main>
         <section class="container">
             <!----------------------- search ------------------------- -->
             <div class="w-75 mx-auto mt-5">
                 <div class="input-group mb-3">
-                    <input id="search_input_box" type="text" class="form-control" placeholder="Search Books"
+                    <input id="search_input_box" type="text" class="form-control" placeholder="Search Your Result"
                         aria-label="Recipient's username" aria-describedby="button-addon2">
-                    <button onclick="loadResults()" class="btn btn-outline-dark" type="button"
+                    <button onclick="loadResults()" class="btn btn-outline-info" type="button"
                         id="button-addon2">Search</button>
                 </div>
             </div>
 
             <!-------------------------------- result count- -- -- ---------    -->
-            <p id="results_counts" class="text-center"></p>
+            <p id="results_counts" class="text-center text-white"></p>
             <hr>
             <span id="top_results" class="mt-0"></span>
 
@@ -50,7 +46,9 @@
 
             <!------------------------------- loader part--------------------------- -->
             <div id="loader" class="text-center  m-5">
-                <img class="w-25 h-25" src="image/loading.png" alt="">
+                <div class="spinner-border text-primary" role="status">
+                    
+                  </div>
             </div>
 
             <!------------------------------------ java script link---------------------- -->
